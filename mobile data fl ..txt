@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main() {
+    int totalData, N;
+    int usage;
+    int successfulDays = 0;
+    scanf("%d", &totalData);
+    scanf("%d", &N);
+    for (int i = 0; i < N; i++) {
+        scanf("%d", &usage);
+        if (totalData - usage >= 0) {
+            totalData -= usage;
+            successfulDays++;
+        } else {
+            totalData -= usage;
+            break; // stop counting further days
+        }
+    }
+    printf("Remaining Data: %d\n", totalData);
+    printf("Successful Days: %d", successfulDays);
+    return 0;
+}
